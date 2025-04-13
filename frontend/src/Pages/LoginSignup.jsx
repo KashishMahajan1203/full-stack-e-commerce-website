@@ -32,20 +32,22 @@ function LoginSignup() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(signupInfo),
+        body: JSON.stringify(signupInfo),c
       });
       const result = await response.json();
-      const { success, message, error } = result;
-      if (success) {
-        handleSuccess(message);
+      if (!response.ok) {
+        // Handle HTTP error responses
+        handleError(result.message || 'Signup failed');
+        return;
+      }
+      
+      if (result.success) {
+        handleSuccess(result.message);
         setTimeout(() => {
           navigate("/login");
         }, 1000);
-      } else if (error) {
-        const details = error?.details[0].message;
-        handleError(details);
       } else {
-        handleError(message);
+        handleError(result.message || 'Signup failed');
       }
     } catch (err) {
       handleError(err);
