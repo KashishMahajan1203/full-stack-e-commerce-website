@@ -32,11 +32,10 @@ function LoginSignup() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(signupInfo),c
+        body: JSON.stringify(signupInfo),
       });
       const result = await response.json();
       if (!response.ok) {
-        // Handle HTTP error responses
         handleError(result.message || 'Signup failed');
         return;
       }
@@ -99,7 +98,7 @@ function LoginSignup() {
 
         <div className="loginsignup-agree">
           <input type="checkbox" name="" id="" />
-          <p>By continuing, I agree to the terms of use & privacy policy.</p>
+          <p>By continuing, I agree to the terms of use &amp; privacy policy.</p>
         </div>
       </div>
     </div>
