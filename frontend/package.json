@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/KashishMahajan1203/full-stack-e-commerce-website.git",
+  "homepage": "https://KashishMahajan1203.github.io/full-stack-e-commerce-website",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
